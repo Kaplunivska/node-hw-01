@@ -12,7 +12,7 @@ async function read() {
 async function listContacts() {
     try {
       const contactsList = await read();
-      console.log(contactsList);
+      console.table(contactsList);
     } catch (error) {
       return error.message;
     }
@@ -22,7 +22,7 @@ async function getContactById(contactId) {
     try {
         const contactsList = await read();
         const contact = contactsList.find((cont) => cont.id === contactId);
-        console.log(contact);
+        console.table(contact);
     } catch (error) {
         return error.message;
     }
